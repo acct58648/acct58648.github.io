@@ -18,6 +18,16 @@
         We additionally also provide the melody-only MIDI file so you can compare what the added accompaniment contributes to the song.
         <br>
         Upon acceptance, we will provide a more detailed demo page with samples for the easier next-timestep prediction task.
+        <br>
+        In particular, we draw your attention to the following comparisons that make the differences between the methods clear:
+        <ol>
+          <li>Setting: Train on 16 bars, test on 16 bars
+            <ul>
+              <li>X-StrIPE vs SPE on chroma similarity or grooving similarity</li>
+              <li>X-StrIPE vs F-StrIPE:C on note density distance</li>
+            </ul>
+          </li>
+        </ol> 
         
         <h3>Setting: Train on 16 bars, test on 16 bars</h3>
 
@@ -101,7 +111,7 @@
           <div class="box">
             <h5>Melody + Accompaniment</h5><br>
             <midi-player
-              src="3/40/bin_paper/pred_317.mid"
+              src="3/40/pred_317.mid"
               sound-font visualizer="#Vis8">
             </midi-player>
             <midi-visualizer type="piano-roll" id="Vis8"></midi-visualizer>
