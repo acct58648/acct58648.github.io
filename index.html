@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo for F-StrIPE</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+        <h2>Demo page for F-StrIPE: Fast Structure-Informed Positional Encoding for Music Generation</h2>
+        For this demo page, we chose to display a minimal set of examples for the melody harmonization task.
+        We display two settings: train on 16 bars + test on 16 bars and train on 16 bars + test on 64 bars.
+        We show four methods for the first setting (X-StrIPE, SPE, F-StrIPE:C and F-StrIPE:SFF:C) and three (SPE, F-StrIPE:C and F-StrIPE:SFF:C) for the second. For the second, it is not possible to perform inference on 64 bars for X-StrIPE.
+        For each method, we give the example with the best score on the four metrics we reported in the paper:
+        Chroma Similarity (best = highest), Self-Similarity Matrix Distance (best = lowest), Grooving Similarity (best = highest) and Note Density Distance (best = lowest).
+        We additionally also provide the melody-only MIDI file so you can compare what the added accompaniment contributes to the song.
+        <br>
+        Upon acceptance, we will provide a more detailed demo page with samples for the easier next-timestep prediction task.
+        <h3>Setting: Train on 16 bars, test on 16 bars</h3>
+
+        <!-- X-StrIPE: 3 -->
+
+        <h4>Method: X-StrIPE</h4><br>
+        <h5>Chroma similarity</h5>
+        
+        <div class="wrapper">
+          <div class="box">
+            <h5>Melody</h5><br>
+            <midi-player
+              src="3/40/melody_44.mid"
+              sound-font visualizer="#Vis1">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis1"></midi-visualizer>
+          </div>
+          <div class="box">
+            <h5>Melody + Accompaniment</h5><br>
+            <midi-player
+              src="3/40/pred_44.mid"
+              sound-font visualizer="#Vis2">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis2"></midi-visualizer>
+          </div>
+        </div>
+
+        <h5>Self-Similarity Matrix Distance</h5>
+        
+        <div class="wrapper">
+          <div class="box">
+            <h5>Melody</h5><br>
+            <midi-player
+              src="3/40/melody_159.mid"
+              sound-font visualizer="#Vis3">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis3"></midi-visualizer>
+          </div>
+          <div class="box">
+            <h5>Melody + Accompaniment</h5><br>
+            <midi-player
+              src="3/40/pred_159.mid"
+              sound-font visualizer="#Vis4">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis4"></midi-visualizer>
+          </div>
+        </div>
+
+        <h5>Grooving Similarity</h5>
+        
+        <div class="wrapper">
+          <div class="box">
+            <h5>Melody</h5><br>
+            <midi-player
+              src="3/40/melody_172.mid"
+              sound-font visualizer="#Vis5">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis5"></midi-visualizer>
+          </div>
+          <div class="box">
+            <h5>Melody + Accompaniment</h5><br>
+            <midi-player
+              src="3/40/pred_172.mid"
+              sound-font visualizer="#Vis6">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis6"></midi-visualizer>
+          </div>
+        </div>
+
+        <h5>Note Density Distance</h5>
+        
+        <div class="wrapper">
+          <div class="box">
+            <h5>Melody</h5><br>
+            <midi-player
+              src="3/40/melody_317.mid"
+              sound-font visualizer="#Vis7">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis7"></midi-visualizer>
+          </div>
+          <div class="box">
+            <h5>Melody + Accompaniment</h5><br>
+            <midi-player
+              src="3/40/bin_paper/pred_317.mid"
+              sound-font visualizer="#Vis8">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis8"></midi-visualizer>
+          </div>
+        </div>
+
+        <!-- SPE: 3 -->
+
+        <h4>Method: SPE</h4><br>
+        <h5>Chroma similarity</h5>
+        
+        <div class="wrapper">
+          <div class="box">
+            <h5>Melody (Binarization - paper)</h5><br>
+            <midi-player
+              src="3/60/melody_50.mid"
+              sound-font visualizer="#Vis9">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis9"></midi-visualizer>
+          </div>
+          <div class="box">
+            <h5>Melody + Accompaniment</h5><br>
+            <midi-player
+              src="3/60/pred_50.mid"
+              sound-font visualizer="#Vis10">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis10"></midi-visualizer>
+          </div>
+        </div>
+
+        <h5>Self-Similarity Matrix Distance</h5>
+        
+        <div class="wrapper">
+          <div class="box">
+            <h5>Melody (Binarization - paper)</h5><br>
+            <midi-player
+              src="3/60/melody_215.mid"
+              sound-font visualizer="#Vis11">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis11"></midi-visualizer>
+          </div>
+          <div class="box">
+            <h5>Melody + Accompaniment (Binarization - paper)</h5><br>
+            <midi-player
+              src="3/60/pred_215.mid"
+              sound-font visualizer="#Vis12">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis12"></midi-visualizer>
+          </div>
+        </div>
+
+        <h5>Grooving Similarity</h5>
+        
+        <div class="wrapper">
+          <div class="box">
+            <h5>Melody</h5><br>
+            <midi-player
+              src="3/60/melody_227.mid"
+              sound-font visualizer="#Vis13">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis13"></midi-visualizer>
+          </div>
+          <div class="box">
+            <h5>Melody + Accompaniment</h5><br>
+            <midi-player
+              src="3/60/pred_227.mid"
+              sound-font visualizer="#Vis14">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis14"></midi-visualizer>
+          </div>
+        </div>
+
+        <h5>Note Density Distance</h5>
+        
+        <div class="wrapper">
+          <div class="box">
+            <h5>Melody</h5><br>
+            <midi-player
+              src="3/60/melody_240.mid"
+              sound-font visualizer="#Vis15">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis15"></midi-visualizer>
+          </div>
+          <div class="box">
+            <h5>Melody + Accompaniment</h5><br>
+            <midi-player
+              src="3/60/pred_240.mid"
+              sound-font visualizer="#Vis16">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="Vis16"></midi-visualizer>
+          </div>
+        </div>
+        
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+  </body>
+</html>

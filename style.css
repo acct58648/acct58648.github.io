@@ -1,0 +1,17 @@
+body {
+  margin: 40px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 600px 600px;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  border-radius: 5px;
+  padding: 20px;
+  border: solid black;
+}
