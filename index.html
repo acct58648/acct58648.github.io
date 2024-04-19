@@ -19,12 +19,19 @@
         <br>
         Upon acceptance, we will provide a more detailed demo page with samples for the easier next-timestep prediction task.
         <br>
-        In particular, we draw your attention to the following comparisons that make the differences between the methods clear:
+        In particular, we draw your attention to the following comparisons that make the differences between the methods transparent:
         <ol>
           <li>Setting: Train on 16 bars, test on 16 bars
             <ul>
               <li>X-StrIPE vs SPE on chroma similarity or grooving similarity</li>
               <li>X-StrIPE vs F-StrIPE:C on note density distance</li>
+              <li>F-StrIPE:C vs F-StrIPE:SFF:C on grooving similarity</li>
+            </ul>
+          </li>
+          <li>Setting: Train on 16 bars, test on 64 bars
+            <ul>
+              <li>X-StrIPE vs F-StrIPE:C on grooving similarity</li>
+              <li>F-StrIPE:C vs F-StrIPE:SFF:C on chroma similarity</li>
             </ul>
           </li>
         </ol> 
